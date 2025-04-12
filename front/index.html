@@ -17,13 +17,28 @@
     <title>Home</title>
 </head>
 <body>
-
-    <!-- Image and text -->
-    <nav class="navbar fixed-top navbar-light bg-light shadow-sm">
-        <div class="container-fluid d-flex justify-content-center">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <p class="m-0 fs-4">Donation Wallet</p>
-            </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold blue" href="#">Donation Wallet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#totalDonatedindex">Total Donated</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donationsTableindex">Donations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donorsTableindex">Donors</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     
@@ -43,7 +58,7 @@
             </div>
         </div>
     </section>
-    <section class="pt-5 pb-5 mb-5">
+    <section class="pt-5 pb-5 mb-5" id="about">
         <div class="container pt-5 mt-5 d-flex flex-column gap-5">
             <h1 class="title display-3 fw-medium blue text-center">
                 About
@@ -57,18 +72,18 @@
 
     </section>
 
-    <section class="pt-5 pb-5 mb-5">
-        <div class="container pt-5 d-flex flex-row align-items-end mt-5 gap-5">
+    <section class="pt-5 pb-5 mb-5" id="totalDonatedindex">
+        <div class="container pt-5 d-flex flex-column align-items-center mt-5 gap-5">
             <h1 class="title display-2 fw-bold blue text-start mb-0">
                 Total Donated: 
             </h1>
-            <span id="totalDonated" class="fs-1 fw-bold text-center text-md-end mb-0"></span>
+            <span id="totalDonated" class="fs-1 fw-bold text-center text-md-end mt-0 mb-0"></span>
         </div>
     </section>
     
 
 
-    <section class="pt-5 pb-5 mb-5">
+    <section class="pt-5 pb-5 mb-5" id="donationsTableindex">
         <div class="container pt-5 mt-5 d-flex flex-column gap-5">
             <h1 class="title display-3 fw-medium blue text-center">
                 Donations
@@ -93,7 +108,7 @@
 
     </section>
 
-    <section class="pt-5 pb-5 mb-5">
+    <section class="pt-5 pb-5 mb-5" id="donorsTableindex">
         <div class="container pt-5 mt-5 d-flex flex-column gap-5">
             <h1 class="title display-3 fw-medium blue text-center">
                 Donors

@@ -11,8 +11,27 @@
     padding: 20px; 
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+body {
+    padding-top: 56px;
+}
+
 .blue{
     color: rgb(83, 86, 245);
+}
+
+a.blue:hover{
+    color: rgb(83, 86, 245);
+}
+
+a:hover{
+    color: rgb(83, 86, 245)!important;
 }
 
 .tamanho{
