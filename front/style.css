@@ -23,6 +23,30 @@
     width: 50%;
 }
 
+.btn-blue {
+    background-color: rgb(83, 86, 245);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-blue:hover {
+    background-color: rgb(112, 102, 245);
+    color: white;
+}
+
+.btn-blue:active {
+    background-color: rgb(112, 102, 245)!important; 
+    transform: scale(0.95)!important; 
+    color: white!important;
+}
+
+
+
 
 #input{
     min-height: 300px !important;

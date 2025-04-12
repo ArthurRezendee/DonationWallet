@@ -2,11 +2,15 @@ require('dotenv').config();
 const express = require('express');
 const { ethers } = require('ethers');
 const axios = require('axios');
+const cors = require('cors');
+
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors());
+
 
 const provider = new ethers.JsonRpcProvider(process.env.URL_RPC);
 const contractAddress = process.env.CONTRACT_ADDRESS;
