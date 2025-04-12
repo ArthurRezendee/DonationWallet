@@ -110,10 +110,10 @@ app.get('/donors', async (req, res) => {
         const contract = new ethers.Contract(contractAddress, abi, provider);
         const donations = await contract.getDonations();
 
-        let donors = []
+        let donors = [];
         donations.forEach(item => {
             const donor = item.donor;
-            const amount = parseFloat(ethers.formatEther(item.amount));
+            let amount = parseFloat(ethers.formatEther(item.amount));
 
             const existingDonor = donors.find(d => d.donor === donor);
             if (existingDonor) {
@@ -123,13 +123,19 @@ app.get('/donors', async (req, res) => {
             }
         });
 
+        donors = donors.map(donor => {
+            let formattedAmount = donor.amount.toFixed(18);
+            formattedAmount = formattedAmount.replace(/(\.\d*?)0+$/, "$1").replace(/\.$/, ""); 
+            donor.amount = formattedAmount;
+            return donor;
+        });
+
         return res.status(200).json({ donors: donors });
     } catch (error) {
         console.error("Erro ao buscar doadores:", error);
         return res.status(500).json({ error: "Erro ao buscar doadores" });
     }
 });
-
 app.get('/info', async (req, res) => {
     try {
         const abi = await getAbi();
