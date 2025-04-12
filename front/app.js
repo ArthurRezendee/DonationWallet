@@ -35,4 +35,40 @@ $(document).ready(function () {
     .catch(function (error) {
         console.error('Erro ao buscar dados:', error);
     });
+
+
+    $('.donate').click(async function(){
+        await api.get('/info')
+        .then(async function (response) {
+            const {abi, contractAddress} = response.data;
+    
+            const valueInput = "0.0001"
+    
+          if (!window.ethereum) {
+            alert("MetaMask não detectado.");
+            return;
+          }
+    
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+    
+          const provider = new ethers.BrowserProvider(window.ethereum);
+          const signer = await provider.getSigner();
+    
+          const contract = new ethers.Contract(contractAddress, abi, signer);
+    
+          try {
+            const tx = await contract.donate({
+              value: ethers.parseEther(valueInput)
+            });
+    
+            console.log("Transação enviada! Aguardando confirmação...");
+            await tx.wait();
+            alert("Doação enviada com sucesso!");
+          } catch (err) {
+            console.error(err);
+            alert("Erro ao enviar doação.");
+          }
+        })
+    })
 });
+

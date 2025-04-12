@@ -126,6 +126,23 @@ app.get('/donors', async (req, res) => {
     }
 });
 
+app.get('/info', async (req, res) => {
+    try {
+        const abi = await getAbi();
+        if (!abi) return res.status(500).json({ error: "Não foi possível carregar ABI" });
+
+        let data = {
+            abi,
+            contractAddress,
+        }
+
+        return res.status(200).json(data);
+    } catch (error) {
+        console.error("Erro ao buscar informações:", error);
+        return res.status(500).json({ error: "Erro ao buscar informações do contrato" });
+    }
+})
+
 
 
 app.listen(PORT, () => {
