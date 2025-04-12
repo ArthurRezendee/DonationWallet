@@ -1,0 +1,110 @@
+#session {
+    background-image: 
+        linear-gradient(to bottom, rgba(1, 5, 255, 0.4) 0%, rgba(0, 0, 0, 0) 100%); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    min-height: 80vh; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+body {
+    padding-top: 56px;
+}
+
+.blue{
+    color: rgb(83, 86, 245);
+}
+
+a.blue:hover{
+    color: rgb(83, 86, 245);
+}
+
+a:hover{
+    color: rgb(83, 86, 245)!important;
+}
+
+.tamanho{
+    width: 50%;
+}
+
+.tamanho-2{
+    width: 50%;
+}
+
+.btn-blue {
+    background-color: rgb(83, 86, 245);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-blue:hover {
+    background-color: rgb(112, 102, 245);
+    color: white;
+}
+
+.btn-blue:active {
+    background-color: rgb(112, 102, 245)!important; 
+    transform: scale(0.95)!important; 
+    color: white!important;
+}
+
+
+
+
+#input{
+    min-height: 300px !important;
+}
+
+.loading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Spinner style */
+.loading-spinner {
+    border: 8px solid #f3f3f3; /* Light grey background */
+    border-top: 8px solid rgb(1, 5, 255); /* Blue spinner */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+    .tamanho{
+        width: 100%;
+    }
+    .tamanho-2{
+        width: 100%;
+    }
+
+    #formulario{
+        flex-direction: column !important;
+    }
+
+  }
