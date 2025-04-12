@@ -34,6 +34,10 @@ a:hover{
     color: rgb(83, 86, 245)!important;
 }
 
+.bg-blue{
+    background-color: rgb(83, 86, 245)!important;
+}
+
 .tamanho{
     width: 50%;
 }

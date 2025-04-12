@@ -91,6 +91,10 @@ app.get('/total-donated', async (req, res) => {
             totalDonated += parseFloat(ethers.formatEther(item.amount));
         });
 
+        totalDonated = totalDonated.toFixed(18); 
+
+        totalDonated = totalDonated.replace(/(\.\d*?)0+$/, "$1").replace(/\.$/, ""); 
+
         return res.status(200).json({ totalDonated: totalDonated });
     } catch (error) {
         console.error("Erro ao buscar total doado:", error);
